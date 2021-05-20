@@ -31,29 +31,30 @@ namespace Capgemini.Infra.Services
 
                         case "fries":
                             {
-                                await Task.FromResult("Enviado para o setor de  Fritas");
+                            
+                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
                                 break;
                             }
 
 
                         case "grill":
                             {
-                                await Task.FromResult("Enviado para o setor de Grill");
+                                await Task.FromResult($"{foods.Name} Enviado para o setor de Grill");
                                 break;
                             }
                         case "salad":
                             {
-                                await Task.FromResult("Enviado para o setor de  Saladas");
+                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Saladas");
                                 break;
                             }
                         case "drink":
                             {
-                                await Task.FromResult("Enviado para o setor de  Bebidas");
+                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Bebidas");
                                 break;
                             }
                         case "desert":
                             {
-                                await Task.FromResult("Enviado para o setor de  Doces");
+                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Doces");
                                 break;
                             }
                     

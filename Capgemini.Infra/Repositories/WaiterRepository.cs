@@ -19,7 +19,7 @@ namespace Capgemini.Infra.Repositories
 
         public async Task<WaiterDTO> AddWaiters(WaiterDTO waiter)
         {
-            await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO waiter
+            await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO Waiter
                         (
                         Name)
                         VALUES

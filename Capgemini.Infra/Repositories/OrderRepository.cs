@@ -20,7 +20,7 @@ namespace Capgemini.Infra.Repositories
 
         public async Task<OrderDTO> AddOrder(OrderDTO pedido)
         {
-            var query = $@"INSERT INTO testebd_.order 
+            var query = $@"INSERT INTO restaurantecapegmini.order 
                                   (
                             tableNumber,
                             idFood,
@@ -58,7 +58,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<IEnumerable<OrderDTO>> GetAllOrders()
         {
             var result = await _unitOfWork.Connection.QueryAsync<OrderDTO>($@"
-                SELECT * FROM order;"
+                SELECT * FROM restaurantecapegmini.order;"
                  , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
 
             return result; ;
@@ -67,7 +67,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<OrderDTO> GetOrderById(int id)
         {
             var result = await _unitOfWork.Connection.QueryFirstOrDefaultAsync<OrderDTO>($@"
-                SELECT * FROM order where Id = @id;"
+                SELECT * FROM restaurantecapegmini.order where Id = @id;"
                , new
                {
                    id
@@ -77,14 +77,15 @@ namespace Capgemini.Infra.Repositories
             return result;
         }
 
-        public async Task<IEnumerable<OrderDTO>> GetOrderByTable(int tableid)
+        public async Task<IEnumerable<OrderDTO>> GetOrderByTable(int tableNumber)
         {
             var result = await _unitOfWork.Connection.QueryAsync<OrderDTO>($@"
-                SELECT * FROM order where tableNumber = @tableid;"
-             ,
-                tableid
-
-              , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
+                SELECT * FROM restaurantecapegmini.order where tableNumber = @tableNumber;"
+               , new
+               {
+                   tableNumber
+               }
+                , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
 
             return result;
         }
