@@ -2,31 +2,33 @@
 {
     public enum FoodEnum
     {
-        fries = 1,
-        grill = 2,
-        salad = 3,
-        drink = 4,
-        desert= 5
+        frito = 1,
+        grelhado = 2,
+        salada = 3,
+        bebida = 4,
+        sobremesa = 5
     }
 
     public enum TasteEnum
     {
-        Sour = 1,
-        Sweet = 2,
+        amargo = 1,
+        doce = 2,
+        salgado = 3,
+
     }
     public enum SteakDone
     {
-        extraRare = 1,
-        rare = 2,
-        mediumRare = 3,
-        medium = 4,
-        mediumWell = 5,
-        wellDone = 6,
-        overcooked = 7
+        cru = 1,
+        malpassado = 2,
+        ponto = 3,
+        pontomais = 4,
+        passado = 5,
+        bempassado = 6,
+        bempassadomais = 7
     }
     public enum Temperature
     {
-        hot = 1,
-        cold = 2
+        quente = 1,
+        frio = 2
     }
 }
