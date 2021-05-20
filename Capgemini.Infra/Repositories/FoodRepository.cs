@@ -19,7 +19,7 @@ namespace Capgemini.Infra.Repositories
 
         public async Task<FoodDTO> AddFoods(FoodDTO foods)
         {
-            await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO testebd_.food
+            await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO food
                             (
                             Name,
                             Price,
@@ -43,7 +43,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<FoodDTO> GetFoodById(int idFood)
         {
             var result = await _unitOfWork.Connection.QueryFirstOrDefaultAsync<FoodDTO>($@"
-                SELECT * FROM testebd_.food where Id = @idFood;"
+                SELECT * FROM food where Id = @idFood;"
               , new
               {
                   idFood
@@ -57,7 +57,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<FoodDTO> GetFoodByName(string name)
         {
             var result = await _unitOfWork.Connection.QueryFirstOrDefaultAsync<FoodDTO>($@"
-                SELECT * FROM testebd_.food where Name = @name;"
+                SELECT * FROM food where Name = @name;"
               , new
               {
                   name

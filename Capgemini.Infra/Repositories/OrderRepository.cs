@@ -58,7 +58,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<IEnumerable<OrderDTO>> GetAllOrders()
         {
             var result = await _unitOfWork.Connection.QueryAsync<OrderDTO>($@"
-                SELECT * FROM testebd_.order;"
+                SELECT * FROM order;"
                  , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
 
             return result; ;
@@ -67,7 +67,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<OrderDTO> GetOrderById(int id)
         {
             var result = await _unitOfWork.Connection.QueryFirstOrDefaultAsync<OrderDTO>($@"
-                SELECT * FROM testebd_.order where Id = @id;"
+                SELECT * FROM order where Id = @id;"
                , new
                {
                    id
@@ -80,7 +80,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<IEnumerable<OrderDTO>> GetOrderByTable(int tableid)
         {
             var result = await _unitOfWork.Connection.QueryAsync<OrderDTO>($@"
-                SELECT * FROM testebd_.order where tableNumber = @tableid;"
+                SELECT * FROM order where tableNumber = @tableid;"
              ,
                 tableid
 

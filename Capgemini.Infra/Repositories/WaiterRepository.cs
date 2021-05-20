@@ -19,9 +19,9 @@ namespace Capgemini.Infra.Repositories
 
         public async Task<WaiterDTO> AddWaiters(WaiterDTO waiter)
         {
-            await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO `testebd_`.`waiter`
+            await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO waiter
                         (
-                        `Name`)
+                        Name)
                         VALUES
                         (
                         @Name
@@ -34,7 +34,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<IEnumerable<WaiterDTO>> GetAllWaiters()
         {
             var result = await _unitOfWork.Connection.QueryAsync<WaiterDTO>($@"
-                SELECT * FROM testebd_.waiter"
+                SELECT * FROM waiter"
                 , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
 
             return result;
