@@ -1,5 +1,4 @@
 ﻿using Capgemini.Domain.DTOs;
-using Capgemini.Domain.Entities;
 using Capgemini.Domain.Interfaces.Repositories;
 using Capgemini.Domain.UnitOfWork;
 using Dapper;

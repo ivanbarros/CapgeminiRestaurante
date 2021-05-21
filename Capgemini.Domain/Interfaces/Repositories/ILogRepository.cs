@@ -1,5 +1,4 @@
 ﻿using Capgemini.Domain.DTOs;
-using Capgemini.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace Capgemini.Domain.Interfaces.Repositories

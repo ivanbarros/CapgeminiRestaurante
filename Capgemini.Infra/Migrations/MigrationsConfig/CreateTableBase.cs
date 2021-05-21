@@ -1,8 +1,5 @@
 ﻿using FluentMigrator;
 using FluentMigrator.Builders.Create.Table;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Capgemini.Infra.Migrations.MigrationsConfig
 {

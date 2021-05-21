@@ -1,5 +1,4 @@
 ﻿using Capgemini.Domain.Commands;
-using Capgemini.Domain.Entities;
 using Capgemini.Domain.Interfaces.Services;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 

@@ -1,10 +1,9 @@
-﻿using Capgemini.Domain.Entities;
-using Capgemini.Domain.Enums;
+﻿using Capgemini.Domain.Enums;
 using MediatR;
 
 namespace Capgemini.Domain.Commands
 {
-  
+
     public class FoodCommand : IRequest<string>
     {
         public string Name { get; set; }

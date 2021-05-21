@@ -1,8 +1,6 @@
 ﻿using Capgemini.Domain.UnitOfWork;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace Capgemini.Infra.UnitOfWorks
 {

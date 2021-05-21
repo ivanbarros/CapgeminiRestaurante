@@ -1,5 +1,4 @@
-﻿using Capgemini.Domain.Entities;
-using Capgemini.Domain.Enums;
+﻿using Capgemini.Domain.Enums;
 using MediatR;
 using System;
 

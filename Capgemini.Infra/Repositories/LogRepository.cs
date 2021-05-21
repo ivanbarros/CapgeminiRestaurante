@@ -1,12 +1,8 @@
 ﻿using Capgemini.Domain.DTOs;
-using Capgemini.Domain.Entities;
 using Capgemini.Domain.Interfaces.Repositories;
 using Capgemini.Domain.UnitOfWork;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Capgemini.Infra.Repositories

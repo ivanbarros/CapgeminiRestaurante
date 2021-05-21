@@ -1,6 +1,5 @@
 ﻿using Capgemini.Infra.Migrations.MigrationsConfig;
 using FluentMigrator;
-using System;
 
 namespace Capgemini.Infra.Migrations
 {

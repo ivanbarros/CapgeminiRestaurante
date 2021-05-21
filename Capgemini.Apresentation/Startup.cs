@@ -4,8 +4,6 @@ using Capgemini.CrossCutting.Config;
 using Capgemini.CrossCutting.DependencyInjection;
 using Capgemini.CrossCutting.Mappings;
 using Capgemini.CrossCutting.MySqlConfig;
-using Capgemini.Data.Context;
-using Capgemini.Domain.Commands;
 using Capgemini.Infra.Configuration.Notifications;
 using Capgemini.Infra.Configuration.Swagger;
 using Capgemini.Infra.Migrations.MigrationsConfig;
@@ -15,13 +13,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System;
-using System.Reflection;
 
 namespace Capgemini.Apresentation
 {

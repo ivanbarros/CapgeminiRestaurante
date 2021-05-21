@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Capgemini.Domain.Entities.Base
+﻿namespace Capgemini.Domain.Entities.Base
 {
     public class BaseEntity
     {

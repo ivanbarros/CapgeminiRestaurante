@@ -1,8 +1,6 @@
 ﻿using Capgemini.Domain.DTOs;
-using Capgemini.Domain.Entities;
 using Capgemini.Domain.Interfaces.Repositories;
 using Capgemini.Domain.Interfaces.Services;
-using System;
 using System.Threading.Tasks;
 
 namespace Capgemini.Infra.Services

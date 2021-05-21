@@ -1,5 +1,4 @@
-﻿using Capgemini.Domain.Enums;
-using MediatR;
+﻿using MediatR;
 
 namespace Capgemini.Domain.Notifications
 {
