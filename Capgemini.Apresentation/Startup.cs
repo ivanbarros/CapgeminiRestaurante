@@ -41,7 +41,8 @@ namespace Capgemini.Apresentation
             IMapper mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
-            MigratorServices.CreateService(Configuration["mysqlDb:connectionString"]);
+            MigratorServices.CreateService(Configuration["sqlDb:connectionString"]);
+            //MigratorServices.CreateMysqlService(Configuration["MysqlDb:connectionString"]);
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepositories(services);
 
@@ -50,7 +51,8 @@ namespace Capgemini.Apresentation
 
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddMySqlDatabase(Configuration);
+            //services.AddMySqlDatabase(Configuration);
+            services.AddSqlDatabase(Configuration);
             services.AddNotificationPattern();
 
             var signingConfigurations = new SigningConfigurations();

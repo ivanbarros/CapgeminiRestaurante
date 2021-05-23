@@ -19,7 +19,7 @@ namespace Capgemini.Infra.Repositories
 
         public async Task<OrderDTO> AddOrder(OrderDTO pedido)
         {
-            var query = $@"INSERT INTO restaurantecapegmini.order 
+            var query = $@"INSERT INTO foodOrders 
                                   (
                             tableNumber,
                             idFood,
@@ -33,21 +33,23 @@ namespace Capgemini.Infra.Repositories
                             (
                             @TableNumber,
                             @idFood,
-                            CURRENT_TIMESTAMP(),
+                            @orderTime,
                             @SteakDone,
                             @quantity,
                             @TotalPrice,
                             @idWaiter,
-                            CURRENT_TIMESTAMP()); 
+                            @closeOrder); 
 ";
             await _unitOfWork.Connection.ExecuteAsync(query,new 
             { 
                 tableNumber= pedido.TableNumber,
                 idFood = pedido.IdFood,
+                orderTime = pedido.OrderTime,
                 SteakDone = pedido.SteakDone,
                 quantity = pedido.Quantity,
                 TotalPrice = pedido.TotalPrice,
                 idWaiter = pedido.IdWaiter,
+                closeOrder = pedido.CloseOrder
             },
                 commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
             return pedido;
@@ -57,7 +59,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<IEnumerable<OrderDTO>> GetAllOrders()
         {
             var result = await _unitOfWork.Connection.QueryAsync<OrderDTO>($@"
-                SELECT * FROM restaurantecapegmini.order;"
+                SELECT * FROM foodOrders;"
                  , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
 
             return result; ;
@@ -66,7 +68,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<OrderDTO> GetOrderById(int id)
         {
             var result = await _unitOfWork.Connection.QueryFirstOrDefaultAsync<OrderDTO>($@"
-                SELECT * FROM restaurantecapegmini.order where Id = @id;"
+                SELECT * FROM foodOrders where Id = @id;"
                , new
                {
                    id
@@ -79,7 +81,7 @@ namespace Capgemini.Infra.Repositories
         public async Task<IEnumerable<OrderDTO>> GetOrderByTable(int tableNumber)
         {
             var result = await _unitOfWork.Connection.QueryAsync<OrderDTO>($@"
-                SELECT * FROM restaurantecapegmini.order where tableNumber = @tableNumber;"
+                SELECT * FROM foodOrders where tableNumber = @tableNumber;"
                , new
                {
                    tableNumber

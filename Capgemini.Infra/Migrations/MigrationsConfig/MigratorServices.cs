@@ -7,6 +7,26 @@ namespace Capgemini.Infra.Migrations.MigrationsConfig
 {
     public static class MigratorServices
     {
+        public static void CreateMysqlService(string connectionString)
+        {
+            var migrationsAssembly = GetMigrationClass.Get();
+
+            if (migrationsAssembly.Any())
+            {
+                var serviceProvider = new ServiceCollection().AddFluentMigratorCore()
+                    .ConfigureRunner(
+                        builder =>
+                            builder
+                           .AddMySql4()
+                           .WithGlobalConnectionString(connectionString)
+                           .ScanIn(migrationsAssembly).For.All())
+                        .AddLogging(lb => lb.AddFluentMigratorConsole())
+                    .BuildServiceProvider();
+
+                using var scope = serviceProvider.CreateScope();
+                UpdateDatabase(scope.ServiceProvider);
+            }
+        }
         public static void CreateService(string connectionString)
         {
             var migrationsAssembly = GetMigrationClass.Get();
@@ -17,7 +37,7 @@ namespace Capgemini.Infra.Migrations.MigrationsConfig
                     .ConfigureRunner(
                         builder =>
                             builder
-                           .AddMySql5()
+                           .AddSqlServer()
                            .WithGlobalConnectionString(connectionString)
                            .ScanIn(migrationsAssembly).For.All())
                         .AddLogging(lb => lb.AddFluentMigratorConsole())

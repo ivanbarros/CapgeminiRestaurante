@@ -8,12 +8,12 @@ namespace Capgemini.Infra.Migrations
     {
         public override void Down()
         {
-            Delete.Table("order");
+            Delete.Table("foodOrders");
         }
 
         public override void Up()
         {
-            Create.Table("order")
+            Create.Table("foodOrders")
             .CreateBase(false)
 
             .WithColumn("tableNumber")
