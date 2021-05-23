@@ -25,6 +25,8 @@ namespace Capgemini.Infra.Services
                 var food = await _foodService.GetFoodByName(foods.Name);
                 foods.IdFood = food.Id;
                 foods.TotalPrice = food.Price * foods.Quantity;
+                foods.OrderTime = DateTime.UtcNow;
+                foods.CloseOrder = DateTime.UtcNow;
                     
                     switch (food.Type)
                     {

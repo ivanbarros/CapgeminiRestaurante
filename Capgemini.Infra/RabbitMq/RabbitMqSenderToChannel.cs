@@ -1,4 +1,5 @@
 ﻿using Capgemini.Domain.DTOs;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System;
 using System.Text;
@@ -20,13 +21,13 @@ namespace Capgemini.Infra.RabbitMq
                                      autoDelete: false,
                                      arguments: null);
 
-                string message = messages.Name;
-                var body = Encoding.UTF8.GetBytes(message);
+                var message = JsonConvert.SerializeObject(messages);
+                var bytesMessage = Encoding.UTF8.GetBytes(message);
 
                 channel.BasicPublish(exchange: "",
                                      routingKey: department,
                                      basicProperties: null,
-                                     body: body);
+                                     body: bytesMessage);
             }
 
         }
