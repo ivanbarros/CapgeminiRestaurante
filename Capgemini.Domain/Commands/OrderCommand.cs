@@ -1,6 +1,7 @@
 ﻿using Capgemini.Domain.Enums;
 using MediatR;
 using System;
+using System.Collections.Generic;
 
 namespace Capgemini.Domain.Commands
 {
@@ -17,5 +18,6 @@ namespace Capgemini.Domain.Commands
         public int Quantity { get; set; }
         public DateTime CloseOrder { get; set; }
         public int IdWaiter { get; set; }
+        
     }
 }

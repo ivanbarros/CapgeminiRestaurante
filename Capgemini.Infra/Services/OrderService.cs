@@ -1,6 +1,7 @@
 ﻿using Capgemini.Domain.DTOs;
 using Capgemini.Domain.Interfaces.Repositories;
 using Capgemini.Domain.Interfaces.Services;
+using Capgemini.Infra.RabbitMq;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -28,34 +29,38 @@ namespace Capgemini.Infra.Services
                     switch (food.Type)
                     {
 
-                        case "fries":
+                        case "frito":
                             {
-                            
+                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
                                 await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
                                 break;
                             }
 
 
-                        case "grill":
+                        case "grelhado":
                             {
-                                await Task.FromResult($"{foods.Name} Enviado para o setor de Grill");
+                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
+                            await Task.FromResult($"{foods.Name} Enviado para o setor de Grill");
                                 break;
                             }
-                        case "salad":
+                        case "salada":
                             {
-                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Saladas");
-                                break;
-                            }
-                        case "drink":
+                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
+                            await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
+                            break;
+                        }
+                        case "bebida":
                             {
-                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Bebidas");
-                                break;
-                            }
+                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
+                            await Task.FromResult($"{foods.Name} Enviado para o setor de  Bebidas");
+                            break;
+                        }
                         case "desert":
                             {
-                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Doces");
-                                break;
-                            }
+                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
+                            await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
+                            break;
+                        }
                     
                 }
             }

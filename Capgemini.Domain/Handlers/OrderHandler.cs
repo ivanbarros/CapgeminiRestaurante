@@ -13,13 +13,13 @@ namespace Capgemini.Domain.Handlers
     {
         private readonly IMediator _mediator;
         private readonly IOrderService _service;
-        private readonly IFoodService _foodservice;
+        
 
-        public OrderHandler(IMediator mediator, IOrderService service, IFoodService foodservice)
+        public OrderHandler(IMediator mediator, IOrderService service)
         {
             _mediator = mediator;
             _service = service;
-            _foodservice = foodservice;
+           
         }
 
         public async Task<string> Handle(OrderCommand request, CancellationToken cancellationToken)

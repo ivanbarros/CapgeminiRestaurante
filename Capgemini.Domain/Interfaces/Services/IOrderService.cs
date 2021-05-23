@@ -1,6 +1,4 @@
 ﻿using Capgemini.Domain.DTOs;
-using Capgemini.Domain.Entities;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
