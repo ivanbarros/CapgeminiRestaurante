@@ -1,3 +1,3 @@
-﻿select * from food
-select * from Waiter
-select * from foodOrders
+﻿select * from foodOrders
+
+ --update food set Type = 'bebida' where Id = 5

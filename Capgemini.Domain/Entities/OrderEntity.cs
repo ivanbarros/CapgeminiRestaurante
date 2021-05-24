@@ -32,7 +32,6 @@ namespace Capgemini.Domain.Entities
         }
         public SteakDone SteakDone { get; set; }
         
-        
         private int quantity;
 
         public int Quantity

@@ -26,8 +26,8 @@ namespace Capgemini.Infra.Services
                 foods.IdFood = food.Id;
                 foods.TotalPrice = food.Price * foods.Quantity;
                 foods.OrderTime = DateTime.UtcNow;
-                foods.CloseOrder = DateTime.UtcNow;
-                    
+                foods.CloseOrder = null;
+
                     switch (food.Type)
                     {
 

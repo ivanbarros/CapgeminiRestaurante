@@ -27,7 +27,7 @@ namespace Capgemini.Domain.Entities
         }
         
         [Required, SwaggerSchema(FoodConstant.TYPE_REQUIRED, Format = "")]
-        public FoodEnum Type { get; set; }
+        public FoodEnum TypeFood { get; set; }
 
         [Required, SwaggerSchema(FoodConstant.TASTE_REQUIRED, Format = "")]
         public TasteEnum Taste { get; set; }

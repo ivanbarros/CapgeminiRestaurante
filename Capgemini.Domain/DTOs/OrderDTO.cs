@@ -13,7 +13,7 @@ namespace Capgemini.Domain.DTOs
         public string TypeFood { get; set; }
         public string SteakDone { get; set; }
         public int Quantity { get; set; }
-        public DateTime CloseOrder { get; set; }
+        public DateTime? CloseOrder { get; set; }
         public int IdWaiter { get; set; }
     }
 }
