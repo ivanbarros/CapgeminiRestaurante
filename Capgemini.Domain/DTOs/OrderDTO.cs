@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Capgemini.Domain.Entities;
+using System;
+using System.Collections.Generic;
 
 namespace Capgemini.Domain.DTOs
 {
@@ -6,7 +8,7 @@ namespace Capgemini.Domain.DTOs
     {
         //public int Id { get; set; }
         public int? IdFood { get; set; }
-        public string Name { get; set; }
+        public List<FoodEntity> Foods { get; set; }
         public int TableNumber { get; set; }
         public DateTime OrderTime { get; set; }
         public decimal TotalPrice { get; set; }

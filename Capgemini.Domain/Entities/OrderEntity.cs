@@ -1,12 +1,13 @@
 ﻿using Capgemini.Domain.Entities.Base;
 using Capgemini.Domain.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace Capgemini.Domain.Entities
 {
     public class OrderEntity : BaseEntity
     {
-        public FoodEntity Food { get; set; }
+        public List<FoodEntity> Foods { get; set; }
         public int? IdFood { get; set; }
 
         private int tableNumber;
@@ -30,7 +31,7 @@ namespace Capgemini.Domain.Entities
             get { return totalPrice; }
             set { totalPrice = value; }
         }
-        public SteakDone SteakDone { get; set; }
+        
         
         private int quantity;
 

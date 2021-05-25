@@ -28,11 +28,8 @@ namespace Capgemini.Domain.Handlers
             var pedido = new OrderDTO
             {
                 TableNumber = request.Orders.TableNumber,
-                SteakDone = request.Orders.SteakDone.ToString(),
                 IdWaiter = request.Orders.IdWaiter ,
-                Name = request.Orders.Food.Name,
-                Quantity = request.Orders.Quantity
-
+                Foods = request.Orders.Foods
             };
             
             try

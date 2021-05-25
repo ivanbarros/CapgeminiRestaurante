@@ -34,7 +34,9 @@ namespace Capgemini.Domain.Entities
 
         [Required, SwaggerSchema(FoodConstant.TEMPERATURE_REQUIRED, Format = "")]
         public Temperature Temperature { get; set; }
+        public int Quantity { get; set; }
+        public SteakDone SteakDone { get; set; }
 
-       
+
     }
 }

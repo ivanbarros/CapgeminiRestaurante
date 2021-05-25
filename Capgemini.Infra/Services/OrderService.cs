@@ -22,56 +22,63 @@ namespace Capgemini.Infra.Services
         {
             try
             {
-                var food = await _foodService.GetFoodByName(foods.Name);
+                foreach (var item in foods.Foods)
+                {
+
+                var food = await _foodService.GetFoodByName(item.Name);
                 foods.IdFood = food.Id;
-                foods.TotalPrice = food.Price * foods.Quantity;
+                foods.TotalPrice = food.Price * item.Quantity;
+                foods.Quantity = item.Quantity;
                 foods.OrderTime = DateTime.UtcNow;
                 foods.CloseOrder = null;
-
+                foods.SteakDone = item.SteakDone.ToString();
                     switch (food.Type)
-                    {
 
+                    {
                         case "frito":
                             {
-                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
-                                await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
+                            RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
+                                await Task.FromResult($"{item.Name} Enviado para o setor de  Fritas");
                                 break;
                             }
 
 
                         case "grelhado":
                             {
-                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
-                            await Task.FromResult($"{foods.Name} Enviado para o setor de Grill");
+                                RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, {item.TypeFood}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
+                                await Task.FromResult($"{item.Name} Enviado para o setor de Grill");
                                 break;
                             }
                         case "salada":
                             {
-                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
-                            await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
+                                RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
+                                await Task.FromResult($"{item.Name} Enviado para o setor de  Fritas");
                             break;
                         }
                         case "bebida":
                             {
-                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
-                            await Task.FromResult($"{foods.Name} Enviado para o setor de  Bebidas");
+                                RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
+                                await Task.FromResult($"{item.Name} Enviado para o setor de  Bebidas");
                             break;
                         }
                         case "desert":
                             {
-                            RabbitMqSenderToChannel.RabbitMqSenderToChannels(foods, food.Type);
-                            await Task.FromResult($"{foods.Name} Enviado para o setor de  Fritas");
+                                RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
+                                await Task.FromResult($"{item.Name} Enviado para o setor de  Fritas");
                             break;
                         }
                     
                 }
+                await _repository.AddOrder(foods);
+                }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                await Task.FromResult($"{ex.Message}");
             }
-            return await _repository.AddOrder(foods);
+            return foods;
         }
 
         public async Task<IEnumerable<OrderDTO>> GetAllOrder()

@@ -8,7 +8,7 @@ namespace Capgemini.Infra.RabbitMq
 {
     public class RabbitMqSenderToChannel
     {
-        public static void RabbitMqSenderToChannels(OrderDTO messages, string department) 
+        public static void RabbitMqSenderToChannels(string messages, string department) 
         {
             //string[] pedidos = { messages.Name,messages.OrderTime.ToString(), messages.SteakDone};
             var factory = new ConnectionFactory() { HostName = "localhost" };
