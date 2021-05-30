@@ -11,5 +11,6 @@ namespace Capgemini.Domain.Commands
         public FoodEnum Type { get; set; }
         public TasteEnum Taste { get; set; }
         public Temperature Temperature { get; set; }
+
     }
 }
