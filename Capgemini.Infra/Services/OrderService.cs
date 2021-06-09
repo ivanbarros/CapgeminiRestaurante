@@ -1,7 +1,7 @@
 ﻿using Capgemini.Domain.DTOs;
 using Capgemini.Domain.Interfaces.Repositories;
 using Capgemini.Domain.Interfaces.Services;
-using Capgemini.Infra.RabbitMq;
+using Capgemini.Infra.Helpers.RabbitMq;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

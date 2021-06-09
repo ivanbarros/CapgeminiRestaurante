@@ -21,7 +21,14 @@ namespace Capgemini.Domain.Entities
             set { errorMethod = value; }
         }
 
-       
+        private string controllerName;
+
+        public string ControllerName
+        {
+            get { return controllerName; }
+            set { controllerName = value; }
+        }
+
         public DateTime ErrorDay { get; set; }
 
     }

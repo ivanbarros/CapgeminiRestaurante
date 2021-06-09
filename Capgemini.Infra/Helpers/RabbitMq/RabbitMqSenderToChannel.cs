@@ -4,7 +4,7 @@ using RabbitMQ.Client;
 using System;
 using System.Text;
 
-namespace Capgemini.Infra.RabbitMq
+namespace Capgemini.Infra.Helpers.RabbitMq
 {
     public class RabbitMqSenderToChannel
     {
