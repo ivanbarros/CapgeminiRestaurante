@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Capgemini.Domain.Models
+﻿namespace Capgemini.Domain.Models
 {
     public class TemplatesListVm
     {

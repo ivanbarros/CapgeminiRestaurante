@@ -15,6 +15,7 @@ namespace Capgemini.CrossCutting.DependencyInjection
             services.AddScoped<IFoodService, FoodService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IWaiterService, WaiterService>();
+            services.AddScoped<IOneSignalService, OneSignalService>();
 
 
 

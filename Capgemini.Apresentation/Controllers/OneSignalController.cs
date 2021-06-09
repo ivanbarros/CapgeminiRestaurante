@@ -10,7 +10,6 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Capgemini.Apresentation.Controllers
 {
@@ -18,9 +17,9 @@ namespace Capgemini.Apresentation.Controllers
     [ApiController]
     public class OneSignalController : ControllerBase
     {
-        
-        
-        
+
+
+
         private readonly IMediator _mediator;
         public OneSignalController(IMediator mediator)
         {
@@ -60,29 +59,29 @@ namespace Capgemini.Apresentation.Controllers
                     ErrorDay = DateTime.UtcNow
                 };
 
-                
+
                 return BadRequest();
             }
 
 
         }
 
-        // POST api/<OneSignalController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        //// POST api/<OneSignalController>
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
-        // PUT api/<OneSignalController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT api/<OneSignalController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-        // DELETE api/<OneSignalController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<OneSignalController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
