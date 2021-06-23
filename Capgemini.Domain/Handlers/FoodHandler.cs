@@ -36,11 +36,8 @@ namespace Capgemini.Domain.Handlers
 
             try
             {
-
-                
                 foods = await _service.AddFoods(foods);
                
-
                 await _mediator.Publish(new FoodCriadaNotification {
                     Name = request.Name,
                     Price = request.Price,

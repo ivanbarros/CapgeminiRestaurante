@@ -1,13 +1,18 @@
 ﻿using Capgemini.Domain.Entities.Base;
 using Capgemini.Domain.Enums;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 
 namespace Capgemini.Domain.Entities
 {
+    
     public class OrderEntity : BaseEntity
     {
+        [BsonElement("foods")]
         public List<FoodEntity> Foods { get; set; }
+
+        
         public int? IdFood { get; set; }
 
         private int tableNumber;

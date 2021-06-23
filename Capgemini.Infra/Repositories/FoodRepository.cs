@@ -1,4 +1,6 @@
-﻿using Capgemini.Domain.DTOs;
+﻿using Capgemini.Data.Context;
+using Capgemini.Domain.DTOs;
+using Capgemini.Domain.Entities;
 using Capgemini.Domain.Interfaces.Repositories;
 using Capgemini.Domain.UnitOfWork;
 using Dapper;
@@ -15,7 +17,7 @@ namespace Capgemini.Infra.Repositories
         {
             _unitOfWork = unitOfWork;
         }
-
+        MongoDbContext dbContext = new MongoDbContext();
         public async Task<FoodDTO> AddFoods(FoodDTO foods)
         {
             await _unitOfWork.Connection.ExecuteAsync($@"INSERT INTO food
@@ -35,6 +37,19 @@ namespace Capgemini.Infra.Repositories
                             "
             , foods
          , commandType: CommandType.Text, transaction: _unitOfWork.Transaction);
+            var taste = foods.Taste;
+            taste = taste.ToString();
+            var comida = new FoodEntity
+            {
+              Name = foods.Name,
+              Price = foods.Price,
+              Taste = Domain.Enums.TasteEnum.amargo,
+              Quantity = 2,
+              TypeFood = Domain.Enums.FoodEnum.grelhado,
+              SteakDone = Domain.Enums.SteakDone.cru,
+              Temperature = Domain.Enums.Temperature.quente
+            };
+            await dbContext.Foods.InsertOneAsync(comida);
             return foods;
 
         }

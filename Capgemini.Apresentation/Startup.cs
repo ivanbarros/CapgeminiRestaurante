@@ -4,6 +4,7 @@ using Capgemini.CrossCutting.Config;
 using Capgemini.CrossCutting.DependencyInjection;
 using Capgemini.CrossCutting.Mappings;
 using Capgemini.CrossCutting.MySqlConfig;
+using Capgemini.Data.Context;
 using Capgemini.Infra.Configuration.Notifications;
 using Capgemini.Infra.Configuration.Swagger;
 using Capgemini.Infra.Migrations.MigrationsConfig;
@@ -84,7 +85,9 @@ namespace Capgemini.Apresentation
                 .RequireAuthenticatedUser().Build());
             });
 
-
+            MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+            MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:Database").Value;
+            MongoDbContext.IsSSL = Convert.ToBoolean(this.Configuration.GetSection("MongoConnection:IsSSL").Value);
 
 
         }
