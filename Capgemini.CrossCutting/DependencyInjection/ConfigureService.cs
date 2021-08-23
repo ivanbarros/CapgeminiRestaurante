@@ -16,10 +16,6 @@ namespace Capgemini.CrossCutting.DependencyInjection
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IWaiterService, WaiterService>();
             services.AddScoped<IOneSignalService, OneSignalService>();
-
-
-
-
         }
     }
 }

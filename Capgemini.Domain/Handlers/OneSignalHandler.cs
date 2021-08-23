@@ -20,11 +20,12 @@ namespace Capgemini.Domain.Handlers
             _mediator = mediator;
             _service = service;
             _logService = logService;
+
         }
 
         public async Task<string> Handle(OneSignalCommand request, CancellationToken cancellationToken)
         {
-            var signal = new CreateNotificationModel() 
+            var signal = new CreateNotificationModel()
             {
                 Title = request.Title,
                 Content = request.Content,
@@ -36,7 +37,7 @@ namespace Capgemini.Domain.Handlers
             try
             {
                 var sendOneSignal = _service.PostOneSignal(signal);
-                await _mediator.Publish(new OneSignalCriadoNotification() 
+                await _mediator.Publish(new OneSignalCriadoNotification()
                 {
                     Title = request.Title,
                     Content = request.Content,
@@ -45,13 +46,17 @@ namespace Capgemini.Domain.Handlers
                     TemplateName = request.TemplateName,
                     Segments = request.Segments
                 });
-                 return await Task.FromResult($"{sendOneSignal} enviado com sucesso");
+                return await Task.FromResult($"{sendOneSignal} enviado com sucesso");
             }
             catch (Exception ex)
             {
 
                 return await Task.FromResult($"Falha ao enviar ao onesignal devido ao erro : {ex.Message}");
             }
+
         }
     }
 }
+
+
+

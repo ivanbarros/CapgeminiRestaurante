@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Capgemini.Apresentation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class OneSignalController : ControllerBase
     {
@@ -59,29 +59,8 @@ namespace Capgemini.Apresentation.Controllers
                     ErrorDay = DateTime.UtcNow
                 };
 
-
                 return BadRequest();
             }
-
-
         }
-
-        //// POST api/<OneSignalController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT api/<OneSignalController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<OneSignalController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

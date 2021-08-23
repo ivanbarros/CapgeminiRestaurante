@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Correios-Api" Version="1.1.1" />
+    <PackageReference Include="Correios.CEP.Net" Version="1.1.6" />
+    <PackageReference Include="Correios.NET" Version="1.3.2" />
     <PackageReference Include="Flunt" Version="2.0.3" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.12.4" />

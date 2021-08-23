@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Capgemini.Apresentation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class WaiterController : ControllerBase
     {
