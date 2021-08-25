@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Capgemini.Domain.Entities;
 
 namespace Capgemini.Domain.Interfaces.Services
 {
-    public interface IUserService
+    public interface IUserService : IBaseService<UserEntity>
     {
+
     }
 }

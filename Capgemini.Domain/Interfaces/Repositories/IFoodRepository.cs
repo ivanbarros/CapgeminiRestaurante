@@ -3,10 +3,7 @@ using System.Threading.Tasks;
 
 namespace Capgemini.Domain.Interfaces.Repositories
 {
-    public interface IFoodRepository
+    public interface IFoodRepository : IBaseRepository
     {
-        Task<FoodDTO> AddFoods(FoodDTO foods);
-        Task<FoodDTO>GetFoodByName(string name);
-        Task<FoodDTO>GetFoodById(int idFood);
     }
 }
