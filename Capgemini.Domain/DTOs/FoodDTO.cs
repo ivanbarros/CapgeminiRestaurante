@@ -6,7 +6,7 @@ namespace Capgemini.Domain.DTOs
     {
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string FoodNames { get; set; }
         [Required]
         public decimal Price { get; set; }
         [Required]

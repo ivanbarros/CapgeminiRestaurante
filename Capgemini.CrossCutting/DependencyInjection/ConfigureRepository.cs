@@ -12,7 +12,7 @@ namespace Capgemini.CrossCutting.DependencyInjection
         
         public static void ConfigureDependenciesRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IBaseRepository, BaseRepository>();
+            
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IFoodRepository, FoodRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
