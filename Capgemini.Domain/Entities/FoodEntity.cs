@@ -21,27 +21,26 @@ namespace Capgemini.Domain.Entities
 
         private decimal price;
 
-        [BsonElement("price")]
         [Required, SwaggerSchema(FoodConstant.PRICE_REQUIRED, Format = "")]
+        [BsonElement("price")]
         public decimal Price
         {
             get { return price; }
             set { price = value; }
         }
 
+        [Required]
+        [SwaggerSchema(FoodConstant.TYPE_REQUIRED, Format = "")]
         [BsonElement("foodType")]
-        
-        [Required, SwaggerSchema(FoodConstant.TYPE_REQUIRED, Format = "")]
         public FoodEnum TypeFood { get; set; }
 
-        [BsonElement("foodTaste")]
-
         [Required, SwaggerSchema(FoodConstant.TASTE_REQUIRED, Format = "")]
+        [BsonElement("foodTaste")]
         public TasteEnum Taste { get; set; }
 
-        [BsonElement("foodTemperature")]
 
         [Required, SwaggerSchema(FoodConstant.TEMPERATURE_REQUIRED, Format = "")]
+        [BsonElement("foodTemperature")]
         public Temperature Temperature { get; set; }
 
         [BsonElement("quantity")]

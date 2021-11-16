@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 
@@ -15,6 +16,9 @@ namespace Capgemini.Infra.Configuration.Swagger
         {
             services.AddSwaggerGen(c =>
             {
+                { c.DescribeAllParametersInCamelCase();
+                    c.UseInlineDefinitionsForEnums();
+                }
                 c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
@@ -24,8 +28,8 @@ namespace Capgemini.Infra.Configuration.Swagger
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Ivan Barros",
-                        Email = "ivansilvabarros@outlook.com",
+                        Name = "Vitale Solution Software House",
+                        Email = "ivansilvabarros@vitalesolution.com.br",
                         Url = new Uri("https://www.linkedin.com/in/ivbarros/"),
                     },
                     License = new OpenApiLicense
@@ -53,16 +57,25 @@ namespace Capgemini.Infra.Configuration.Swagger
             }, new List<string>()
         }
     });
+               
 
             });
 
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson(
+                (options =>
+        options.SerializerSettings.Converters.Add(new StringEnumConverter())));
+
         }
 
         public static void UseSwaggerFramework(this IApplicationBuilder app)
         {
+            app.UseSwaggerUI(options =>
+            {
+                options.DefaultModelsExpandDepth(-1);
+            });
             app.UseSwagger();
-            app.UseSwaggerUI(c => {
+            app.UseSwaggerUI(c =>
+            {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurante Capgemini");
             });
         }

@@ -29,13 +29,13 @@ namespace Capgemini.Apresentation.Controllers
         }
 
         [HttpGet("FoodById")]
+        [SwaggerOperation(
+            Summary = "Visualização dos alimentos pelo Id"
+        )]
         [SwaggerResponse(StatusCodes.Status200OK)]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
-        [SwaggerOperation(
-            Summary = "Visualização dos alimentos pelo Id"
-        )]
 
         
         public async Task<IActionResult> GetFoodById(int id)
@@ -58,13 +58,13 @@ namespace Capgemini.Apresentation.Controllers
         }
 
         [HttpPost("InsertFood")]
+        [SwaggerOperation(
+            Summary = "Inserção dos alimentos"
+        )]
         [SwaggerResponse(StatusCodes.Status200OK)]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
-        [SwaggerOperation(
-            Summary = "Inserção dos alimentos"
-        )]
         public async Task<IActionResult> InsertFood([FromBody, Required] FoodCommand food)
         {
             try
