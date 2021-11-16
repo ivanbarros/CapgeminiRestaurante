@@ -30,7 +30,7 @@ namespace Capgemini.Domain.Entities
         }
 
         [Required]
-        [SwaggerSchema("O campo TYPE é obrigatório. Tipos suportados:  frito = 1, grelhado = 2, salada = 3, bebida = 4, sobremesa = 5", Format = "")]
+        [SwaggerSchema(FoodConstant.TYPE_REQUIRED, Format = "")]
         [BsonElement("foodType")]
         public FoodEnum TypeFood { get; set; }
 

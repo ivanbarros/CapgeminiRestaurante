@@ -16,7 +16,9 @@ namespace Capgemini.Infra.Configuration.Swagger
         {
             services.AddSwaggerGen(c =>
             {
-
+                { c.DescribeAllParametersInCamelCase();
+                    c.UseInlineDefinitionsForEnums();
+                }
                 c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
@@ -55,6 +57,7 @@ namespace Capgemini.Infra.Configuration.Swagger
             }, new List<string>()
         }
     });
+               
 
             });
 
@@ -71,7 +74,8 @@ namespace Capgemini.Infra.Configuration.Swagger
                 options.DefaultModelsExpandDepth(-1);
             });
             app.UseSwagger();
-            app.UseSwaggerUI(c => {
+            app.UseSwaggerUI(c =>
+            {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurante Capgemini");
             });
         }
