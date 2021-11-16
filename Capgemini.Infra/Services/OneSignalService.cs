@@ -22,7 +22,7 @@ namespace Capgemini.Infra.Services
                 Guid appKeyId = Guid.Parse(_configuration["OneSignal:appKeyId"]);
                 string RestKey = _configuration["OneSignal:RestKey"];
 
-                if (String.IsNullOrEmpty(oneSignal.Title) || oneSignal.Title == "string")
+                if (String.IsNullOrEmpty(oneSignal.TemplateName) || oneSignal.TemplateName == "string")
                 {
 
                     await OneSignalPushNotificationHelper.OneSignalPushNotification(oneSignal, appKeyId, RestKey);
@@ -33,6 +33,7 @@ namespace Capgemini.Infra.Services
                     await OneSignalPushNotificationHelper.OneSignalPushNotificationByTemplate(oneSignal, appKeyId, RestKey);
                 }
 
+                     
 
                 return oneSignal;
             }

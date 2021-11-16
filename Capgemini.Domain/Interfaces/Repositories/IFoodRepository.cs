@@ -1,12 +1,14 @@
 ﻿using Capgemini.Domain.DTOs;
+using Capgemini.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace Capgemini.Domain.Interfaces.Repositories
 {
     public interface IFoodRepository
     {
-        Task<FoodDTO> AddFoods(FoodDTO foods);
-        Task<FoodDTO>GetFoodByName(string name);
-        Task<FoodDTO>GetFoodById(int idFood);
+        Task<FoodDTO> GetFoodById(int idFood);
+        Task<FoodDTO> GetFoodByName(string name);
+        //Task Insert(FoodEntity foods);
+        Task Insert(FoodDTO foods);
     }
 }

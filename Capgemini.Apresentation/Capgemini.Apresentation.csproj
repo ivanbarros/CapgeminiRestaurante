@@ -1,12 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>6fd412a3-4c94-424c-b165-e7013c81d628</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <ApplicationIcon />
+    <Win32Resource />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Users\ivans\Source\Repos\Testes\Capgemini\CapgeminiSolution\Capgemini.Apresentation\Capgemini.Apresentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Docker.DotNet" Version="3.125.4" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.6" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
@@ -16,6 +24,10 @@
     <ProjectReference Include="..\Capgemini.CrossCutting\Capgemini.CrossCutting.csproj" />
     <ProjectReference Include="..\Capgemini.Domain\Capgemini.Domain.csproj" />
     <ProjectReference Include="..\Capgemini.Infra\Capgemini.Infra.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Docker\" />
   </ItemGroup>
 
 

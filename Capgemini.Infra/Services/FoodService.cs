@@ -17,9 +17,9 @@ namespace Capgemini.Infra.Services
 
         public async Task<FoodDTO> AddFoods(FoodDTO foods)
         {
-            var result = await _repository.AddFoods(foods);
+            await _repository.Insert(foods);
            
-            return result;
+            return foods;
 
         }
 

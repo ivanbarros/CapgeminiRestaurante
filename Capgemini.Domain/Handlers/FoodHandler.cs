@@ -27,7 +27,7 @@ namespace Capgemini.Domain.Handlers
             
             var foods = new FoodDTO
             { 
-                Name = request.Name,
+                FoodNames = request.Name,
                 Price = request.Price,
                 Taste = request.Taste.ToString(),
                 Temperature = request.Temperature.ToString(),

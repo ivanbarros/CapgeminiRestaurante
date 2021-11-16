@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "serviceActions": {
+        "capgemini.apresentation": "StartWithoutDebugging"
+      },
+      "commandVersion": "1.0"
+    }
+  }
+}

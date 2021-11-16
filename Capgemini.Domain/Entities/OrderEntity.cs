@@ -57,6 +57,13 @@ namespace Capgemini.Domain.Entities
         public WaiterEntity Waiter { get; set; }
         public int IdWaiter { get; set; }
 
+        private UserEntity User;
+
+        public UserEntity user
+        {
+            get { return User; }
+            set { User = value; }
+        }
 
 
     }

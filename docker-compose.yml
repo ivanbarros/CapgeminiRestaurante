@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  capgemini.apresentation:
+    image: ${DOCKER_REGISTRY-}capgeminiapresentation
+    build:
+      context: .
+      dockerfile: Capgemini.Apresentation/Dockerfile
