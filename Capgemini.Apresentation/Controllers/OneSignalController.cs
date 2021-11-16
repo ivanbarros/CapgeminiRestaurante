@@ -27,12 +27,12 @@ namespace Capgemini.Apresentation.Controllers
             _mediator = mediator;
         }
 
-        ///
+        
         [ActionName(nameof(PostOneSignal))]
         [HttpPost()]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [SwaggerResponse(StatusCodes.Status200OK)]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> PostOneSignal([FromBody, Required, SwaggerParameter("Endpoint para acessar o Onesignal ")] OneSignalCommand OneSignal)
         {
             if (!ModelState.IsValid)

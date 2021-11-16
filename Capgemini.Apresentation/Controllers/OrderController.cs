@@ -31,9 +31,9 @@ namespace Capgemini.Apresentation.Controllers
         }
 
         [HttpGet("OrderById")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [SwaggerResponse(StatusCodes.Status200OK)]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
         [SwaggerOperation(
             Summary = "Visualização dos pedidos realizados no dia pelo Id"
@@ -58,9 +58,9 @@ namespace Capgemini.Apresentation.Controllers
         }
 
         [HttpGet("AllOrders")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [SwaggerResponse(StatusCodes.Status200OK)]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
         [SwaggerOperation(
             Summary = "Visualização de todos pedidos realizados"
@@ -86,9 +86,9 @@ namespace Capgemini.Apresentation.Controllers
         }
 
         [HttpGet("GetOrderByTable")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [SwaggerResponse(StatusCodes.Status200OK)]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
         [SwaggerOperation(
             Summary = "Visualização de todos pedidos realizados de determinada mesa"
@@ -105,9 +105,9 @@ namespace Capgemini.Apresentation.Controllers
 
         [HttpPost]
         [Route("Order")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [SwaggerResponse(StatusCodes.Status200OK)]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
         [SwaggerOperation(
            Summary = "inserção de  pedidos realizados no dia"

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Capgemini.Apresentation</name>
+    </assembly>
+    <members>
+        <member name="M:Capgemini.Apresentation.Controllers.OneSignalController.PostOneSignal(Capgemini.Domain.Commands.OneSignalCommand)">
+            
+        </member>
+    </members>
+</doc>

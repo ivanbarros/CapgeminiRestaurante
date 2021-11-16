@@ -5,6 +5,12 @@
     <UserSecretsId>6fd412a3-4c94-424c-b165-e7013c81d628</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <ApplicationIcon />
+    <Win32Resource />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Users\ivans\Source\Repos\Testes\Capgemini\CapgeminiSolution\Capgemini.Apresentation\Capgemini.Apresentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
