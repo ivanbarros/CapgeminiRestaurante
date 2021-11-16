@@ -2,11 +2,11 @@
 {
     public enum FoodEnum
     {
-        frito,
-        grelhado,
-        salada,
-        bebida,
-        sobremesa
+        frito = 1,
+        grelhado = 2,
+        salada = 3,
+        bebida = 4,
+        sobremesa = 5
     }
 
     public enum TasteEnum

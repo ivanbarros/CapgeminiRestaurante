@@ -105,13 +105,13 @@ namespace Capgemini.Apresentation.Controllers
 
         [HttpPost]
         [Route("Order")]
+        [SwaggerOperation(
+           Summary = "inserção de  pedidos realizados no dia"
+       )]
         [SwaggerResponse(StatusCodes.Status200OK)]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
-        [SwaggerOperation(
-           Summary = "inserção de  pedidos realizados no dia"
-       )]
         public async Task<IActionResult> InsertOrder([FromBody, Required] OrderCommand order)
         {
             
