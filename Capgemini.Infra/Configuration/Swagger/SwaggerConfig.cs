@@ -23,15 +23,15 @@ namespace Capgemini.Infra.Configuration.Swagger
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "AspnetCore 3.1",
-                    Description = "API REST criada com o Asp.Net core e arquitetura DDD",
+                    Title = "Vitale Solution Restaurante",
+                    Description = "Api para melhoria de processos dentro de um restaurante",
                     TermsOfService = new Uri("https://example.com/terms"),
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Vitale Solution Software House",
-                        Email = "ivansilvabarros@vitalesolution.com.br",
-                        Url = new Uri("https://www.linkedin.com/in/ivbarros/"),
-                    },
+                    //Contact = new OpenApiContact
+                    //{
+                    //    Name = "Vitale Solution Software House",
+                    //    Email = "ivansilvabarros@vitalesolution.com.br",
+                    //    Url = new Uri("https://www.linkedin.com/in/ivbarros/"),
+                    //},
                     License = new OpenApiLicense
                     {
                         Name = "GitHub",

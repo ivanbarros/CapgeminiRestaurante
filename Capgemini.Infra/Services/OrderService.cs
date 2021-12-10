@@ -32,6 +32,8 @@ namespace Capgemini.Infra.Services
                 foods.OrderTime = DateTime.UtcNow;
                 foods.CloseOrder = null;
                 foods.SteakDone = item.SteakDone.ToString();
+                    
+                    
                     switch (food.Type)
 
                     {

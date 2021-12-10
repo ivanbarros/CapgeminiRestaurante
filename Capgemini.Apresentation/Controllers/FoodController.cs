@@ -57,14 +57,16 @@ namespace Capgemini.Apresentation.Controllers
             }
         }
 
+
         [HttpPost("InsertFood")]
         [SwaggerOperation(
-            Summary = "Inserção dos alimentos"
+            Summary = "Inserção dos alimentos no banco de dados"
         )]
         [SwaggerResponse(StatusCodes.Status200OK)]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [SwaggerResponse(StatusCodes.Status500InternalServerError)]
         [ApiExplorerSettings(IgnoreApi = false)]
+
         public async Task<IActionResult> InsertFood([FromBody, Required] FoodCommand food)
         {
             try

@@ -19,8 +19,7 @@ namespace Capgemini.Domain.Extensions
                 endereco.Cep = address.ZipCode;
                 endereco.Complemento = end.Complemento;
                 endereco.Numero = end.Numero;
-
-            }
+             }
             return endereco;
         }
     }
