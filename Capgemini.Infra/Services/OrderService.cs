@@ -12,7 +12,7 @@ namespace Capgemini.Infra.Services
     {
         private readonly IFoodService _foodService;
         private readonly IOrderRepository _repository;
-        public OrderService(IFoodService foodService,IOrderRepository repository)
+        public OrderService(IFoodService foodService, IOrderRepository repository)
         {
             _foodService = foodService;
             _repository = repository;
@@ -25,21 +25,21 @@ namespace Capgemini.Infra.Services
                 foreach (var item in foods.Foods)
                 {
 
-                var food = await _foodService.GetFoodByName(item.Name);
-                foods.IdFood = food.Id;
-                foods.TotalPrice = food.Price * item.Quantity;
-                foods.Quantity = item.Quantity;
-                foods.OrderTime = DateTime.UtcNow;
-                foods.CloseOrder = null;
-                foods.SteakDone = item.SteakDone.ToString();
-                    
-                    
+                    var food = await _foodService.GetFoodByName(item.Name);
+                    foods.IdFood = food.Id;
+                    foods.TotalPrice = food.Price * item.Quantity;
+                    foods.Quantity = item.Quantity;
+                    foods.OrderTime = DateTime.UtcNow;
+                    foods.CloseOrder = null;
+                    foods.SteakDone = item.SteakDone.ToString();
+
+
                     switch (food.Type)
 
                     {
                         case "frito":
                             {
-                            RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
+                                RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
                                 await Task.FromResult($"{item.Name} Enviado para o setor de  Fritas");
                                 break;
                             }
@@ -55,23 +55,23 @@ namespace Capgemini.Infra.Services
                             {
                                 RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
                                 await Task.FromResult($"{item.Name} Enviado para o setor de  Fritas");
-                            break;
-                        }
+                                break;
+                            }
                         case "bebida":
                             {
                                 RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
                                 await Task.FromResult($"{item.Name} Enviado para o setor de  Bebidas");
-                            break;
-                        }
+                                break;
+                            }
                         case "desert":
                             {
                                 RabbitMqSenderToChannel.RabbitMqSenderToChannels($"{item.Name}, mesa: {foods.TableNumber} quantidade: {item.Quantity}", food.Type);
                                 await Task.FromResult($"{item.Name} Enviado para o setor de  Fritas");
-                            break;
-                        }
-                    
-                }
-                await _repository.AddOrder(foods);
+                                break;
+                            }
+
+                    }
+                    await _repository.AddOrder(foods);
                 }
 
             }
@@ -85,12 +85,12 @@ namespace Capgemini.Infra.Services
 
         public async Task<IEnumerable<OrderDTO>> GetAllOrder()
         {
-           return await _repository.GetAllOrders();
+            return await _repository.GetAllOrders();
         }
 
         public async Task<OrderDTO> GetOrderById(int id)
         {
-           return await _repository.GetOrderById(id);
+            return await _repository.GetOrderById(id);
         }
 
         public async Task<IEnumerable<OrderDTO>> GetOrderByTable(int table)

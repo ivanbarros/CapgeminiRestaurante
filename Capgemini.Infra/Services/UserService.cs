@@ -10,6 +10,7 @@ namespace Capgemini.Infra.Services
 {
     public class UserService : IUserService
     {
+
         private readonly IUserRepository _repository;
         public async Task<UserEntity> Add(UserEntity entity)
         {
