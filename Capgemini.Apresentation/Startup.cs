@@ -47,10 +47,13 @@ namespace Capgemini.Apresentation
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepositories(services);
 
-            services.AddMvc(opt => opt.Filters.Add<NotificationFilter>())
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddMvc(opt => opt.Filters.Add<NotificationFilter>());
 
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddMediatR(config =>
+            {
+                config.RegisterServicesFromAssemblyContaining<Startup>();
+
+            });
 
             //services.AddMySqlDatabase(Configuration);
             services.AddSqlDatabase(Configuration);
