@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31112.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{D729C548-D44D-4330-870E-C534C1F3CDAE}"
 EndProject
@@ -29,10 +29,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8539A667-EF45-4877-8352-53EEAD0FB3DB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6- Testes", "6- Testes", "{85E0DBFC-7807-4829-990A-E6BC225938BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capgemini.Apresentation.Test", "..\Capgemini.Apresentation.Test\Capgemini.Apresentation.Test.csproj", "{5EA598AB-38D3-45A2-AE3E-AF4C84CB8065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,10 +60,6 @@ Global
 		{8539A667-EF45-4877-8352-53EEAD0FB3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8539A667-EF45-4877-8352-53EEAD0FB3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8539A667-EF45-4877-8352-53EEAD0FB3DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EA598AB-38D3-45A2-AE3E-AF4C84CB8065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EA598AB-38D3-45A2-AE3E-AF4C84CB8065}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EA598AB-38D3-45A2-AE3E-AF4C84CB8065}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EA598AB-38D3-45A2-AE3E-AF4C84CB8065}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,7 +70,6 @@ Global
 		{30C3C780-39D0-462C-85A7-1B5B4F273A74} = {1B81E29B-9DE2-4D27-B4A7-F41ACCD66439}
 		{3D8B9668-1763-4B23-9E80-E08EA403C3A8} = {64CCCC3C-440F-425D-804B-C35465A99479}
 		{B36B3213-0CBD-462B-B3D5-4A44BC6CBEEE} = {7D2BADFA-2116-49F4-A3A4-145A3A5E3B1F}
-		{5EA598AB-38D3-45A2-AE3E-AF4C84CB8065} = {85E0DBFC-7807-4829-990A-E6BC225938BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F7BA629-92FE-4CDF-A56A-A8B8EBC43449}

@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Data.SqlClient;
+
 
 namespace Capgemini.CrossCutting.MySqlConfig
 {
